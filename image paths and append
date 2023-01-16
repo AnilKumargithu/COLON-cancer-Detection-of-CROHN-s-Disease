@@ -1,0 +1,12 @@
+data=[]
+labels=[]
+for i in imagePaths:
+    label=i.split(os.path.sep)[-2]
+    labels.append(label)
+    image=load_img(i,target_size=(224,224))
+    image=img_to_array(image)
+    image=preprocess_input(image)
+    data.append(image)
+    
+    
+    
