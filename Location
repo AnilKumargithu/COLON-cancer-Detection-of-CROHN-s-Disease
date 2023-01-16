@@ -1,0 +1,2 @@
+Dataset=r'C:\Users\Anil\Python-3.9\COLON Chrons Disease Detection\Dataset/'
+imagePaths=list(paths.list_images(Dataset))
