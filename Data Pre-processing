@@ -1,0 +1,27 @@
+data=np.array(data,dtype='float32')
+labels=np.array(labels)
+
+data.shape
+(10000, 224, 224, 3)
+
+labels
+array(['Dataset/Colon_Adenocarcinoma', 'Dataset/Colon_Adenocarcinoma',
+       'Dataset/Colon_Adenocarcinoma', ..., 'Dataset/Colon_Benign_Tissue',
+       'Dataset/Colon_Benign_Tissue', 'Dataset/Colon_Benign_Tissue'],
+      dtype='<U28')
+      
+lb=LabelBinarizer()
+labels=lb.fit_transform(labels)
+labels=to_categorical(labels)
+
+labels
+array([[1., 0.],
+       [1., 0.],
+       [1., 0.],
+       ...,
+       [0., 1.],
+       [0., 1.],
+       [0., 1.]], dtype=float32)
+       
+train_X,test_X,train_Y,test_Y=train_test_split(data,labels,train_size=0.80,
+test_size=0.20, random_state=10,stratify=labels)
